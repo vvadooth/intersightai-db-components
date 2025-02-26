@@ -1,6 +1,6 @@
 {
   "name": "intersightai-db-components",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ]
