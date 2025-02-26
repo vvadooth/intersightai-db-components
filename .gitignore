@@ -1,0 +1,34 @@
+# Node modules for each package
+node_modules/
+**/node_modules/
+
+# Build output directories
+dist/
+**/dist/
+
+# Build artifacts
+build/
+**/build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files (adjust as needed)
+.env
+.env.local
+.env.*.local
+
+# MacOS files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# pnpm workspace lock file
+pnpm-lock.yaml

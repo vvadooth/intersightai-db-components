@@ -1,0 +1,18 @@
+{
+  "name": "intersightai-db-backend",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/multer": "^1.4.7",
+    "typescript": "^4.9.5"
+  },
+  "license": "MIT"
+}

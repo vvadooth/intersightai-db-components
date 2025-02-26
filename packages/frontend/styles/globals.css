@@ -1,0 +1,189 @@
+@tailwind base;
+
+@custom-variant dark (&:is(.dark *));
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 0%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 0%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 0%;
+        --primary: 197 98% 48%; /* Slightly lighter blue */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 197 92% 42%; /* Slightly lighter */
+        --secondary-foreground: 0 0% 100%;
+        --muted: 197 95% 50%; /* Slightly lighter muted */
+        --muted-foreground: 0 0% 10%;
+        --accent: 197 95% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 90%;
+        --input: 0 0% 90%;
+        --ring: 197 98% 48%;
+        --chart-1: 197 98% 48%;
+        --chart-2: 197 92% 42%;
+        --chart-3: 197 95% 50%;
+        --chart-4: 220 60% 50%;
+        --chart-5: 30 80% 55%;
+        --radius: 0.5rem;
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 0 0% 0%;
+        --sidebar-primary: 197 98% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 197 92% 42%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+    .dark {
+        --background: 0 0% 14%; /* #242424 */
+        --foreground: 0 0% 100%;
+        --card: 0 0% 14%;
+        --card-foreground: 0 0% 100%;
+        --popover: 0 0% 14%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 197 98% 36%; /* Slightly darker */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 197 92% 32%; /* Slightly darker */
+        --secondary-foreground: 0 0% 100%;
+        --muted: 197 95% 38%; /* Slightly darker muted */
+        --muted-foreground: 0 0% 90%;
+        --accent: 197 95% 38%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 30%;
+        --input: 0 0% 30%;
+        --ring: 197 98% 36%;
+        --chart-1: 197 98% 36%;
+        --chart-2: 197 92% 32%;
+        --chart-3: 197 95% 38%;
+        --chart-4: 220 60% 50%;
+        --chart-5: 30 80% 55%;
+        --sidebar-background: 0 0% 14%;
+        --sidebar-foreground: 0 0% 100%;
+        --sidebar-primary: 197 98% 36%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 197 92% 32%;
+        --sidebar-accent-foreground: 0 0% 100%;
+        --sidebar-border: 0 0% 30%;
+        --sidebar-ring: 197 98% 36%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    @font-face {
+        font-family: "geist";
+        font-style: normal;
+        font-weight: 100 900;
+        src: url(/fonts/geist.woff2) format("woff2");
+    }
+
+    @font-face {
+        font-family: "geist-mono";
+        font-style: normal;
+        font-weight: 100 900;
+        src: url(/fonts/geist-mono.woff2) format("woff2");
+    }
+}
+
+.skeleton {
+    * {
+        pointer-events: none !important;
+    }
+
+    *[class^="text-"] {
+        color: transparent;
+        @apply rounded-md bg-foreground/20 select-none animate-pulse;
+    }
+
+    .skeleton-bg {
+        @apply bg-foreground/10;
+    }
+
+    .skeleton-div {
+        @apply bg-foreground/20 animate-pulse;
+    }
+}
+
+.ProseMirror {
+    outline: none;
+}
+
+.cm-editor,
+.cm-gutters {
+    @apply bg-background dark:bg-zinc-800 outline-none selection:bg-zinc-900 !important;
+}
+
+.ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
+.ͼo.cm-selectionBackground,
+.ͼo.cm-content::selection {
+    @apply bg-zinc-200 dark:bg-zinc-900 !important;
+}
+
+.cm-activeLine,
+.cm-activeLineGutter {
+    @apply bg-transparent !important;
+}
+
+.cm-activeLine {
+    @apply rounded-r-sm !important;
+}
+
+.cm-lineNumbers {
+    @apply min-w-7;
+}
+
+.cm-foldGutter {
+    @apply min-w-3;
+}
+
+.cm-lineNumbers .cm-activeLineGutter {
+    @apply rounded-l-sm !important;
+}
+
+.suggestion-highlight {
+    @apply bg-blue-200 hover:bg-blue-300 dark:hover:bg-blue-400/50 dark:text-blue-50 dark:bg-blue-500/40;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}

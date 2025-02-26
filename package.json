@@ -1,0 +1,7 @@
+{
+  "name": "intersightai-db-components",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
